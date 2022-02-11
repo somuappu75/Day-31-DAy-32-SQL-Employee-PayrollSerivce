@@ -147,6 +147,44 @@ update employee_payroll
 set TaxablePay=0,IncomeTax=0
 select * from employee_payroll;
 
+----- UC 10: Adding another Value for Terissa in Sales&Marketing Department -----
+Insert into employee_payroll(name,basicPay,StartDate,Address,EmployeePhoneNumber,EmployeeDepartment) values ('Terissa',250000,'2021-02-20','Pune','9845798856','Salaes&Mkt');
+select * from employee_payroll;
+
+--UC-11 adding same name to with differnt department and same other attributes to same table--
+ create table company
+(company_id int primary key,
+companyName varchar(50) not null);
+--inserted data into company table
+insert into company
+values(101, 'Infosys India');
+--altering table employee payroll to add company id column
+alter table employee_payroll
+add company_id int not null default 101;
+
+--adding department table
+create table departments
+(departmentID int primary key,
+departmentName varchar(50) not null,
+noOfEmployees int ,
+headOfDepartment varchar(50) not null);
+--adding data into department table
+insert into departments values
+(01,'Design',17,'Mr. PavanPavale'),(02,'HR',67,'Supriya Halbhavi'),(03,'Maintainence',8,'VishuG');
+insert into departments(departmentID,departmentName,headOfDepartment)
+values(04,'Sales','Somaanth'),(05,'Marketing','Savita Gondi');
+
+--creating employee department table
+create table EmployeeDepartment
+(employeeID int not null, departmentID int not null);
+insert into EmployeeDepartment
+values
+(1,01),(2,02),(3,02),(1,03);
+
+select * from employee_payroll;
+
+--renaming table name from employee payroll to employee using stored procedure
+exec sp_rename 'departments', 'Departments'
 
 
 
