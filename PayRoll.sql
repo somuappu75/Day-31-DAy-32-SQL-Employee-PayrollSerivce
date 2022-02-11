@@ -66,9 +66,7 @@ where name ='chetan';
 Update employee_payroll 
 set EmployeePhoneNumber='9731390823',EmployeeDepartment='Co-Devloper',Address='Bangalore,Karnataka'
 where name='gouri';
-Update employee_payroll 
-set name='chetana'
-where name ='chetan';
+
 
 ----UC 9:  Salary to Basic Pay and Add Deduction,Taxable pay, Income Tax , Netpay --
 Alter table employee_payroll
