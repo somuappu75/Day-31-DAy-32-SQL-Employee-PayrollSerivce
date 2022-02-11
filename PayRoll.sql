@@ -20,8 +20,16 @@ Insert into employee_payroll(name,salary,startDate) values
 
 --uc-4 retrieving all data
 select *from employee_payroll;
+---uc-5 retrieving data from cast() anf Getdate()
+select salary from employee_payroll where name='suresh';
+select salary from employee_payroll where startDate BETWEEN Cast('2021-08-19' as Date) and GetDate();
 
 
-)
+
+
+
+
+
+
 
 
