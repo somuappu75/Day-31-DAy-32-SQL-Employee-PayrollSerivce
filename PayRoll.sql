@@ -17,5 +17,11 @@ Insert into employee_payroll(name,salary,startDate) values
 ('chetan',11000,'2021-05-13'),
 ('gouri',35000,'2021-08-19');
 
+
 --uc-4 retrieving all data
 select *from employee_payroll;
+
+
+)
+
+
